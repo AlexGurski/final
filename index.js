@@ -52,7 +52,7 @@ app.get('/service/:id', (req,res) => {
          push = service[i]
        }
      }
-     console.log(push)
+  //   console.log(push)
      res.render('oneService.ejs',{post:push});
    })
 
