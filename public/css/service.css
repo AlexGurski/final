@@ -55,15 +55,18 @@ display: flex;
   margin-bottom: 20px;
     color: black;
       text-shadow: 1px 1px 5px gold;
+      text-align: justify;
 }
 .serviceMenu{
+  margin-right: 25px;
+  margin-left: 25px;
   margin-top: 20px;
-
   text-shadow: 3px 1px 5px red;
-  font-size: 30px;
+  font-size: 25px;
   font-family: classic;
   text-align: center;
   color:black;
+  text-align: justify;
 }
 .slideShowParty{
   display: -webkit-box;
