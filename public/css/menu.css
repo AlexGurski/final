@@ -1,0 +1,161 @@
+.AllItems{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 60%;
+  /border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.centerMain{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  flex-wrap: wrap;
+  transition: linear 0.5s;
+}
+.extraItems{
+  width: 15%;
+}
+
+.centerMainHeader{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 99%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  overflow: auto;
+  width: 99%;
+
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.centerMainHeader::-webkit-scrollbar{
+  width: 0px;
+}
+#enterKind{
+  text-align: center;
+  width: 100%;
+  margin: 10px;
+  color:black;
+  font-size: 30px;
+  font-family: antiqua;
+}
+
+.headerItemMenu{
+height: 100px;
+width: 100px;
+margin-left:  5px;
+border-radius: 50%;
+position: relative;
+border: 1px dotted black;
+cursor: pointer;
+margin-bottom: 10px;
+}
+
+.headerItemMenuImage{
+  height: 100px;
+  width:  100px;
+  border-radius: 50%;
+}
+
+.headerItemMenuDiscription{
+  color:white;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+
+  position: absolute;
+  top:calc(50% - 1em);
+  font-size: 20px;
+  text-align: center;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.headerItemMenu:hover .headerItemMenuImage{
+  opacity: 0.4;
+}
+.headerItemMenu:hover .headerItemMenuDiscription{
+  opacity: 1;
+}
+.headerItemMenu:hover{
+    background-color: black;
+}
+@media screen and (orientation:portrait) {
+.ItemsCenter{
+/  width: 38vw;
+/  height: 60vw;
+}
+  .workSpace{
+    flex-direction: column-reverse;
+  }
+  .centerMainHeader{
+    display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+    height: 100px;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -o-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+.extraItems{
+  width: 99%;
+  height:150px;
+  margin: 0;
+}
+.headerItemMenu{
+height: 67px;
+width: 67px;
+}
+.headerItemMenuImage{
+  height: 67px;
+  width:  67px;
+}
+.headerItemMenuDiscription{
+  font-size: 0.9em;
+}
+.AllItems{
+width: 99%;
+}
+.headerItemMenuDiscription{
+  opacity: 1;
+}
+.headerItemMenuImage{
+  opacity: 0.4;
+}
+.headerItemMenu{
+    background-color: black;
+}
+}

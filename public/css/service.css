@@ -1,0 +1,124 @@
+.eventText{
+  text-align: justify;
+  padding:  10px;
+  color:black;
+}
+.eventName{
+    color:black;
+}
+.nashiUslugi{
+  display: none;
+}
+.servicePhoto{
+  background-image: url('../image/reserved.jpg');
+  background-size: 100% 100%;
+  width: 30vw;
+  height: 20vw;
+  border-radius: 25px;
+}
+.allService{
+  display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+  width: 99%;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+.serviceTextMain{
+  font-size: 1.5em;
+}
+.serviceName{
+  color:#f2f291;
+  text-shadow: 0 0 5px #fff;
+  margin-top: 10px;
+  font-size: 50px;
+  font-family: elzevir;
+  width: 100%;
+  text-align: center;
+  font-weight: 900;
+  color: black;
+}
+.serviceText{
+  color:#f2f291;
+  text-shadow: 0 0 5px black;
+  margin-top: 10px;
+  padding: 1em;
+  font-size: 25px;
+  font-family: antiqua;
+  text-align: left;
+  margin-bottom: 20px;
+    color: black;
+      text-shadow: 1px 1px 5px gold;
+}
+.serviceMenu{
+  margin-top: 20px;
+
+  text-shadow: 3px 1px 5px red;
+  font-size: 30px;
+  font-family: classic;
+  text-align: center;
+  color:black;
+}
+.slideShowParty{
+  display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+  margin-top: 20px;
+  margin-bottom:  20px;
+  width: 100%;
+
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+     -ms-flex-pack: space-evenly;
+   justify-content: space-evenly;
+}
+
+.img{
+  flex-shrink: 0;
+  position: relative;
+  height: 280px;
+  width: 330px;
+  border-radius: 15px;
+  margin: 20px;
+  background-size: 100% 100%;
+  box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -23px 0 20px -23px rgba(0, 0, 0, .8),
+   23px 0 20px -23px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .5) inset;
+}
+.slideShowParty div:nth-child(1) {
+  background-image: url("../image/service5.jpg");
+ }
+ .slideShowParty div:nth-child(3) {
+   background-image: url("../image/service1.jpg");
+  }
+  .slideShowParty div:nth-child(4) {
+    background-image: url("../image/service2.jpg");
+   }
+   .slideShowParty div:nth-child(5) {
+     background-image: url("../image/service3.jpg");
+    }
+    .slideShowParty div:nth-child(6) {
+      background-image: url("../image/service6.jpg");
+     }
+     .slideShowParty div:nth-child(2) {
+       background-image: url("../image/service4.jpg");
+       padding-right: : 10px;
+      }
+.adaptive{
+  display: none;
+}

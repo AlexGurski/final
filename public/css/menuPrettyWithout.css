@@ -1,0 +1,49 @@
+.menuItemWith{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 325px;
+  height: 100%;
+}
+
+.menuItemWithPhoto{
+  height: 300px;
+  width: 100%;
+/  border: 2px solid red;
+  background-size: 100% 100%;
+}
+
+.menuItemWithDiscription{
+  display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+    background-color:  black;
+/  border: 2px solid gold;
+
+  flex-direction: column;
+  color: white;
+  margin-top: 1em;
+}
+
+.menuItemWithDiscriptionText{
+  /border-top: 1px dashed #f2f291;
+    color: white;
+    padding-top: 5px;
+    cursor: pointer;
+    background-color:  black;
+}
+.menuItemWithDiscriptionText:hover{
+  background-color: #0d0d0d;
+}
+.menuItemWithDiscriptionTextOther{
+  color: grey;
+}
+.menuItemWithDiscriptionTextPrice{
+  text-align: right;
+}

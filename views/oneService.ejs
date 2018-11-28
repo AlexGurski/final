@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link rel="shortcut icon" href="../public/image/logo.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../public/css/inedexService.css">
+<link rel="stylesheet" type="text/css" href="../public/css/service.css">
+</head>
+  <body>
+      <% include blocks/preloader.ejs %>
+        <% include blocks/indexAdaptive.ejs %>
+    <div class='black'>
+    </div>
+    <div class = 'workSpace'>
+        <div class = 'AllItems'>
+          <div class = 'centerMain' id = 'centerMain'>
+                    <div class ='serviceName'>
+                    <%=post.name %>
+                    </div>
+                    <div class ='serviceText'>
+                    <%=post.text %>
+                  </div>
+                  <hr>
+                      <div class ='serviceMenu'>
+                        При организации банкетов, кафе "Парк Авеню" предоставляет эксклюзивное оформление залов и особое меню.
+                      </div>
+
+                      <div class = 'index slideShowParty'>
+                        <div class = 'img'>
+                        </div>
+                        <div class = 'img'>
+                        </div>
+                        <div class = 'img'>
+                        </div>
+                        <div class = 'img'>
+                        </div>
+                        <div class = 'img'>
+                        </div>
+                        <div class = 'img'>
+                        </div>
+                      </div>
+          </div>
+          <div class ='extraAbout telephone'>
+            <div class='exPhoto tel'>
+
+            </div>
+            <div class='exAbText'>
+              +375 (163) 41-09-78 <br>
+              +375 (163) 41-11-54
+            </div>
+          </div>
+        </div>
+        <div class='extraItems'>
+          <div class = 'serviceBlock'>
+              <% include blocks/indexService.ejs %>
+          </div>
+        </div>
+            <% include blocks/allMainBorder.ejs %>
+    </div>
+<link rel="stylesheet" type="text/css" href="../public/css/serviceOneAdaptive.css">
+  </body>
+</html>

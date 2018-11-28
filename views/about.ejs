@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link rel="shortcut icon" href="../public/image/logo.png" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="../public/css/aboutAtmosphere.css">
+<link rel="stylesheet" type="text/css" href="../public/css/aboutMenu.css">
+<link rel="stylesheet" type="text/css" href="../public/css/aboutUslugam.css">
+</head>
+<body>
+    <% include blocks/preloader.ejs %>
+      <% include blocks/indexAdaptive.ejs %>
+  <div class='black'>
+  </div>
+  <div class = 'workSpace'>
+      <div class = 'AllItems'>
+        <div class = 'centerMain'>
+          <div class = 'mainMenyPark'>
+          Кафе <br>
+          "Парк Авеню"<br>
+            </div>
+
+      <% include blocks/aboutWeDiscription.ejs %>
+    </div>
+      </div>
+    <div class='extraItems'>
+            <div class ='extraAbout location'>
+              <div class='exPhoto gps'>
+              </div>
+              <div class='exAbText'>
+                г. Барановичи, Парк имени 30-летия ВЛКСМ
+              </div>
+            </div>
+            <div class='map adaptive'>
+              <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A03f5552e5936b514b9b4d81e4db127666e3081220d2156e781911c37bd852b99&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+              </div>
+            <div class ='extraAbout telephone'>
+              <div class='exPhoto tel'>
+              </div>
+              <div class='exAbText'>
+                +375 (163) 41-09-78 <br>
+                +375 (163) 41-11-54
+              </div>
+            </div>
+            <div class ='extraAbout time'>
+              <div class='exPhoto tim'>
+
+              </div>
+              <div class='exAbText'>
+                ЕЖЕДНЕВНО <br>10:00 - 22:00
+              </div>
+            </div>
+            <div class ='extraAbout'>
+              <div class='exPhoto vk'>
+
+              </div>
+              <div class='exAbText'>
+<a href="https://vk.com/park_avenyu_baranovichi_new" target="_blank">
+              park_avenyu_baranovichi_new
+ </a>              </div>
+            </div>
+
+            <div class='adaptive'>
+              <% include blocks/aboutWeDiscription.ejs %>
+            </div>
+    </div>
+          <% include blocks/allMainBorder.ejs %>
+  </div>
+
+<link rel="stylesheet" type="text/css" href="../public/css/about.css">
+</body>
+</html>
