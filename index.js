@@ -72,6 +72,7 @@ app.get('/service',(req, res) => {
   res.render('service.ejs');
 })
 
+
 app.get('/galery',(req, res) => {
   res.render('galery.ejs');
 })
