@@ -34,7 +34,8 @@ display: flex;
 .menuItemWithDiscriptionText{
   /border-top: 1px dashed #f2f291;
     color: white;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px
     cursor: pointer;
     background-color:  black;
 }
