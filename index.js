@@ -74,10 +74,15 @@ fs.readFile( './sitemap.xml', function(err, data) {
     var json = parser.toJson(data);
     app.get('/sitemap.xml', function(req, res) {
       res.send(data);
+
     });
  });
 
+ app.get('/robots.txt', function(req, res) {
 
+
+   res.send( fs.readFileSync("robots.txt", "utf8"));
+ });
 
 app.get('/galeryFolber',(req, res) => {
     fs.readdir(galery, (err, files) => {
