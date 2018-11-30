@@ -1,6 +1,6 @@
 "use strict"
 
-let busboy = require('connect-busboy')
+//let busboy = require('connect-busboy')
 const multer  = require('multer')
 
 const fs = require('fs');
@@ -11,7 +11,7 @@ const app = express();
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() )
 app.use('/public', express.static('public'));
-app.use(busboy());
+//app.use(busboy());
 
 const galery = './public/image/galery/';
 
@@ -46,12 +46,12 @@ app.post('/profile', function(req, res) {
 });
 */
 
-app.post('/profile', multer(
-  { dest: './public/image/galery/' }
-).single('avatar'), function (req, res, next) {
-  console.log(req.file);
+app.post('/profile', multer({ dest: './public/image/galery/111/' }
+).single('photo'), function (req, res, next) {
+//  console.log(req.file);
   res.send('ok')
 })
+
 /////////////////создание папки
 const mkdirSync = function (path) {
   try {
