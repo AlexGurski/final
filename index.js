@@ -32,28 +32,26 @@ let salat= require("./public/json/salat.js");
 
 let allMenuWith = menuPizza.concat(salat, sandwblinch, supzavtrak, menuHot,menuCold, menuGarnirs,desert);
 let allMenuWithout = pivo.concat(vodka,tea,sokmorozh,cocktail);
-
+/*
 app.post('/profile', function(req, res) {
   console.log(req);
     req.pipe(req.busboy);
     req.busboy.on('file', function(fieldname, file, filename) {
-        var fstream = fs.createWriteStream('/public/image/galery/'+'111/' + filename);
+        var fstream = fs.createWriteStream('./public/image/galery/'+'111/' + filename);
         file.pipe(fstream);
         fstream.on('close', function () {
             res.send('upload succeeded!');
         });
     });
 });
+*/
 
-/*
 app.post('/profile', multer(
-
   { dest: './public/image/galery/' }
 ).single('avatar'), function (req, res, next) {
   console.log(req.file);
   res.send('ok')
 })
-*/
 /////////////////создание папки
 const mkdirSync = function (path) {
   try {
