@@ -46,11 +46,14 @@ app.post('/profile', function(req, res) {
 });
 */
 
+
 app.post('/profile', multer({ dest: './public/image/galery/111/' }
 ).single('photo'), function (req, res, next) {
 //  console.log(req.file);
   res.send('ok')
 })
+
+
 
 /////////////////создание папки
 const mkdirSync = function (path) {
