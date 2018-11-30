@@ -1,18 +1,18 @@
 @font-face {
  font-family: elzevir; /* Гарнитура шрифта */
- src: url("../fonts/elzevir.ttf"); /* Путь к файлу со шрифтом */
+ src: url("../../fonts/elzevir.ttf"); /* Путь к файлу со шрифтом */
 }
 @font-face {
  font-family: classic; /* Гарнитура шрифта */
- src: url("../fonts/grafiti.otf"); /* Путь к файлу со шрифтом */
+ src: url("../../fonts/grafiti.otf"); /* Путь к файлу со шрифтом */
 }
 @font-face {
  font-family: tolstyak; /* Гарнитура шрифта */
- src: url("../fonts/tolstyak.ttf"); /* Путь к файлу со шрифтом */
+ src: url("../../fonts/tolstyak.ttf"); /* Путь к файлу со шрифтом */
 }
 @font-face {
  font-family: antiqua; /* Гарнитура шрифта */
- src: url("../fonts/grafiti.otf"); /* Путь к файлу со шрифтом */
+ src: url("../../fonts/grafiti.otf"); /* Путь к файлу со шрифтом */
 }
 
 #nav-trigger{
@@ -67,7 +67,7 @@ body{
 .headerLogo{
   width: 95%;
   height: 12vw;
-  background-image: url("../image/logo.png");
+  background-image: url("../../image/logo.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

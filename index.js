@@ -1,19 +1,21 @@
 "use strict"
+
+let busboy = require('connect-busboy')
+const multer  = require('multer')
+
+const fs = require('fs');
+
 const express = require('express');
 const bodyParser = require( 'body-parser' );
 const app = express();
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() )
 app.use('/public', express.static('public'));
-/*
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const url = 'mongodb://alex:panik1993@ds239873.mlab.com:39873/heroku_4b2prwdg';
-const dbName = 'heroku_4b2prwdg';
-const rez =   require("./public/modules/searchJS");
-*/
-let service= require("./public/json/serviceJSON.js");
+app.use(busboy());
 
+const galery = './public/image/galery/';
+
+let service= require("./public/json/serviceJSON.js");
 let desert= require("./public/json/desert.js");
 let menuPizza = require("./public/json/menuPizza.js");
 let menuHot = require("./public/json/menuHot.js");
@@ -31,6 +33,50 @@ let salat= require("./public/json/salat.js");
 let allMenuWith = menuPizza.concat(salat, sandwblinch, supzavtrak, menuHot,menuCold, menuGarnirs,desert);
 let allMenuWithout = pivo.concat(vodka,tea,sokmorozh,cocktail);
 
+app.post('/profile', function(req, res) {
+  console.log(req);
+    req.pipe(req.busboy);
+    req.busboy.on('file', function(fieldname, file, filename) {
+        var fstream = fs.createWriteStream('./public/image/galery/'+'Новый год/' + filename);
+        file.pipe(fstream);
+        fstream.on('close', function () {
+            res.send('upload succeeded!');
+        });
+    });
+});
+
+/*
+app.post('/profile', multer(
+
+  { dest: './public/image/galery/' }
+).single('avatar'), function (req, res, next) {
+  console.log(req.file);
+  res.send('ok')
+})
+*/
+/////////////////создание папки
+const mkdirSync = function (path) {
+  try {
+    fs.mkdirSync(path)
+  } catch (err) {
+    if (err.code !== 'EEXIST') throw err
+  }
+}
+
+//mkdirSync(testFolder+'new_folber');
+
+//////////////чтение файлов
+app.get('/galeryFolber',(req, res) => {
+    fs.readdir(galery, (err, files) => {
+    res.send(files);
+    })
+})
+
+app.post("/getFilesInFolber", (req,res) => {
+    fs.readdir(galery+req.body.name, (err, files) => {
+    res.send(files);
+  })
+});
 
 app.get('/allMenu', (req,res) =>{
          res.send (require("./public/json/allMenu.js"));
@@ -52,7 +98,6 @@ app.get('/service/:id', (req,res) => {
          push = service[i]
        }
      }
-  //   console.log(push)
      res.render('oneService.ejs',{post:push});
    })
 
@@ -76,8 +121,10 @@ app.get('/service',(req, res) => {
 app.get('/galery',(req, res) => {
   res.render('galery.ejs');
 })
-
- app.listen(80, () => {
+app.get('/administrator', (req,res) =>{
+      res.render('administrator.ejs');
+})
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;

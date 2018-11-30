@@ -1,0 +1,7 @@
+.galeryAdd{
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 50%;
+  border:2px solid red;
+}
