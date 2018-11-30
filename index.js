@@ -47,7 +47,7 @@ app.post('/profile', function(req, res) {
 */
 
 
-app.post('/profile', multer({ dest: './public/image/galery/111/' }
+app.post('/profile', multer({ dest: './public/image/galery/Новый год/' }
 ).single('photo'), function (req, res, next) {
 //  console.log(req.file);
   res.send('ok')
