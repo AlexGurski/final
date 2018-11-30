@@ -37,7 +37,7 @@ app.post('/profile', function(req, res) {
   console.log(req);
     req.pipe(req.busboy);
     req.busboy.on('file', function(fieldname, file, filename) {
-        var fstream = fs.createWriteStream('./public/image/galery/'+'111/' + filename);
+        var fstream = fs.createWriteStream('/public/image/galery/'+'111/' + filename);
         file.pipe(fstream);
         fstream.on('close', function () {
             res.send('upload succeeded!');
