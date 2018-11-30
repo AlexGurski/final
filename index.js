@@ -45,9 +45,6 @@ app.post('/profile', function(req, res) {
     });
 });
 */
-
-
-
 let upload = multer({ dest: './public/image/galery/Новый год/' })
 
 app.post('/profile', upload.single('photo'), function (req, res, next) {
@@ -69,9 +66,7 @@ const mkdirSync = function (path) {
 
 //////////////чтение файлов
 
-var parser = require('xml2json');
 fs.readFile( './sitemap.xml', function(err, data) {
-    var json = parser.toJson(data);
     app.get('/sitemap.xml', function(req, res) {
       res.send(data);
 
@@ -79,8 +74,6 @@ fs.readFile( './sitemap.xml', function(err, data) {
  });
 
  app.get('/robots.txt', function(req, res) {
-
-
    res.send( fs.readFileSync("robots.txt", "utf8"));
  });
 
