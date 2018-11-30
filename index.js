@@ -47,12 +47,13 @@ app.post('/profile', function(req, res) {
 */
 
 
-app.post('/profile', multer({ dest: './public/image/galery/Новый год/' }
-).single('photo'), function (req, res, next) {
-//  console.log(req.file);
+
+let upload = multer({ dest: './public/image/galery/Новый год/' })
+
+app.post('/profile', upload.single('photo'), function (req, res, next) {
+  console.log(req.body);
   res.send('ok')
 })
-
 
 
 /////////////////создание папки
@@ -67,6 +68,17 @@ const mkdirSync = function (path) {
 //mkdirSync(testFolder+'new_folber');
 
 //////////////чтение файлов
+
+var parser = require('xml2json');
+fs.readFile( './sitemap.xml', function(err, data) {
+    var json = parser.toJson(data);
+    app.get('/sitemap.xml', function(req, res) {
+      res.send(data);
+    });
+ });
+
+
+
 app.get('/galeryFolber',(req, res) => {
     fs.readdir(galery, (err, files) => {
     res.send(files);
@@ -125,7 +137,7 @@ app.get('/galery',(req, res) => {
 app.get('/administrator', (req,res) =>{
       res.render('administrator.ejs');
 })
- app.listen(80, () => {
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
