@@ -1,17 +1,12 @@
 "use strict"
-
-//let busboy = require('connect-busboy')
 const multer  = require('multer')
-
 const fs = require('fs');
-
 const express = require('express');
 const bodyParser = require( 'body-parser' );
 const app = express();
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() )
 app.use('/public', express.static('public'));
-//app.use(busboy());
 
 const galery = './public/image/galery/';
 
@@ -32,23 +27,16 @@ let salat= require("./public/json/salat.js");
 
 let allMenuWith = menuPizza.concat(salat, sandwblinch, supzavtrak, menuHot,menuCold, menuGarnirs,desert);
 let allMenuWithout = pivo.concat(vodka,tea,sokmorozh,cocktail);
-/*
-app.post('/profile', function(req, res) {
-  console.log(req);
-    req.pipe(req.busboy);
-    req.busboy.on('file', function(fieldname, file, filename) {
-        var fstream = fs.createWriteStream('./public/image/galery/'+'111/' + filename);
-        file.pipe(fstream);
-        fstream.on('close', function () {
-            res.send('upload succeeded!');
-        });
-    });
-});
-*/
-let upload = multer({ dest: './public/image/galery/Новый год/' })
 
-app.post('/profile', upload.single('photo'), function (req, res, next) {
-  console.log(req.body);
+//fs.mkdirSync(galery+req.body.text); создание папки
+//fs.rmdirSync('stuff'); удаление
+
+app.post('/profile', multer().single('photo'), function (req, res, next) {
+console.log(req.file);
+
+let wstream = fs.createWriteStream(galery+req.body.text+'/'+req.file.originalname);
+wstream.write(req.file.buffer);
+wstream.end();
   res.send('ok')
 })
 
@@ -69,13 +57,19 @@ const mkdirSync = function (path) {
 fs.readFile( './sitemap.xml', function(err, data) {
     app.get('/sitemap.xml', function(req, res) {
       res.send(data);
-
     });
  });
+
+/*
+ app.get('/sitemap.xml', (req,res) => {
+ fs.readFile('./sitemap.xml', data => res.send(data))
+})
+*/
 
  app.get('/robots.txt', function(req, res) {
    res.send( fs.readFileSync("robots.txt", "utf8"));
  });
+
 
 app.get('/galeryFolber',(req, res) => {
     fs.readdir(galery, (err, files) => {
@@ -135,7 +129,7 @@ app.get('/galery',(req, res) => {
 app.get('/administrator', (req,res) =>{
       res.render('administrator.ejs');
 })
- app.listen(80, () => {
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
