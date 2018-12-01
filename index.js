@@ -41,11 +41,13 @@ app.post('/deleteDir',function(req,res,next){
     res.redirect('/administrator')});
 })
 
-app.post('/profile', multer().single('photo'), function (req, res, next) {
-    //console.log(req.body.text);
-    let wstream = fs.createWriteStream(galery+req.body.text+'/'+req.file.originalname);
-    wstream.write(req.file.buffer);
-    wstream.end();
+app.post('/profile', multer().array('photo', 100), function (req, res, next) {
+  //  console.log(req.files);
+    for (let i=0;i<req.files.length;i++){
+      let wstream = fs.createWriteStream(galery+req.body.text+'/'+req.files[i].originalname);
+        wstream.write(req.files[i].buffer);
+        wstream.end();
+    }
       res.redirect('/administrator')
 })
 
@@ -139,7 +141,7 @@ fs.readFile( './sitemap.xml', function(err, data) {
  });
 
 
- app.listen(80, () => {
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;

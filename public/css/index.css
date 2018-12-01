@@ -4,6 +4,7 @@
 .AllItems:hover{
   color:#8B4513;
 }
+
 .AllItems:hover .hi{
   font-size: 35px;
 }
