@@ -141,7 +141,7 @@ fs.readFile( './sitemap.xml', function(err, data) {
  });
 
 
- app.listen(3000, () => {
+ app.listen(80, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
