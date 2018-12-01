@@ -3,6 +3,7 @@ const multer  = require('multer')
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require( 'body-parser' );
+const rimraf = require('rimraf');
 const app = express();
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() )
@@ -28,47 +29,38 @@ let salat= require("./public/json/salat.js");
 let allMenuWith = menuPizza.concat(salat, sandwblinch, supzavtrak, menuHot,menuCold, menuGarnirs,desert);
 let allMenuWithout = pivo.concat(vodka,tea,sokmorozh,cocktail);
 
-//fs.mkdirSync(galery+req.body.text); создание папки
-//fs.rmdirSync('stuff'); удаление
 
-app.post('/profile', multer().single('photo'), function (req, res, next) {
-console.log(req.file);
 
-let wstream = fs.createWriteStream(galery+req.body.text+'/'+req.file.originalname);
-wstream.write(req.file.buffer);
-wstream.end();
-  res.send('ok')
+app.post('/createDir',function(req,res,next){
+  fs.mkdirSync(galery+req.body.text);
+  res.redirect('/administrator')
 })
 
+app.post('/deleteDir',function(req,res,next){
+    rimraf(galery+req.body.text, function () {
+    res.redirect('/administrator')});
+})
+
+app.post('/profile', multer().single('photo'), function (req, res, next) {
+    //console.log(req.body.text);
+    let wstream = fs.createWriteStream(galery+req.body.text+'/'+req.file.originalname);
+    wstream.write(req.file.buffer);
+    wstream.end();
+      res.redirect('/administrator')
+})
 
 /////////////////создание папки
+/*
 const mkdirSync = function (path) {
   try {
     fs.mkdirSync(path)
   } catch (err) {
     if (err.code !== 'EEXIST') throw err
   }
-}
-
+}*/
 //mkdirSync(testFolder+'new_folber');
 
 //////////////чтение файлов
-
-fs.readFile( './sitemap.xml', function(err, data) {
-    app.get('/sitemap.xml', function(req, res) {
-      res.send(data);
-    });
- });
-
-/*
- app.get('/sitemap.xml', (req,res) => {
- fs.readFile('./sitemap.xml', data => res.send(data))
-})
-*/
-
- app.get('/robots.txt', function(req, res) {
-   res.send( fs.readFileSync("robots.txt", "utf8"));
- });
 
 
 app.get('/galeryFolber',(req, res) => {
@@ -122,14 +114,32 @@ app.get('/service',(req, res) => {
   res.render('service.ejs');
 })
 
-
 app.get('/galery',(req, res) => {
   res.render('galery.ejs');
 })
+
 app.get('/administrator', (req,res) =>{
       res.render('administrator.ejs');
 })
- app.listen(80, () => {
+
+fs.readFile( './sitemap.xml', function(err, data) {
+    app.get('/sitemap.xml', function(req, res) {
+      res.send(data);
+    });
+ });
+
+/*
+ app.get('/sitemap.xml', (req,res) => {
+ fs.readFile('./sitemap.xml', data => res.send(data))
+})
+*/
+
+ app.get('/robots.txt', function(req, res) {
+   res.send( fs.readFileSync("robots.txt", "utf8"));
+ });
+
+
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
