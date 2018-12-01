@@ -129,7 +129,7 @@ app.get('/galery',(req, res) => {
 app.get('/administrator', (req,res) =>{
       res.render('administrator.ejs');
 })
- app.listen(3000, () => {
+ app.listen(80, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
