@@ -244,11 +244,11 @@ function createMenuPretty(items){
        weight.className = 'weight';
          weight.innerHTML =  items[i].gram;
        document.getElementById(addCart.id).appendChild(weight);
-/*
+
      const pPrice = document.createElement("div");
        pPrice.className = 'pPrice';
        pPrice.innerHTML =  items[i].price
-     document.getElementById(addCart.id).appendChild(pPrice);*/
+     document.getElementById(addCart.id).appendChild(pPrice);
 //console.log(items[i]);
 if (items[i].gram1!==undefined){
 
@@ -261,11 +261,11 @@ if (items[i].gram1!==undefined){
      weight.className = 'weight';
        weight.innerHTML =  items[i].gram1 ;
      document.getElementById(addCart.id).appendChild(weight);
-/*
+
    const pPrice = document.createElement("div");
      pPrice.className = 'pPrice';
      pPrice.innerHTML =  items[i].price1
-   document.getElementById(addCart.id).appendChild(pPrice);*/
+   document.getElementById(addCart.id).appendChild(pPrice);
 
  }
  }

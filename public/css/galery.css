@@ -75,8 +75,10 @@ justify-content: center;
 overflow-x: hidden;
 width: 60%
 }
+
 .extraItems{
   width: 15%;
+  border:0px solid grey;
 }
 
 .folberName{
