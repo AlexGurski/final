@@ -1,9 +1,10 @@
 "use strict"
 const multer  = require('multer')
 const fs = require('fs');
+const rimraf = require('rimraf');
 const express = require('express');
 const bodyParser = require( 'body-parser' );
-const rimraf = require('rimraf');
+
 const app = express();
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() )
@@ -126,6 +127,9 @@ app.get('/administrator', (req,res) =>{
 
 fs.readFile( './sitemap.xml', function(err, data) {
     app.get('/sitemap.xml', function(req, res) {
+  res.setHeader('content-type', 'text/xml; charset=utf-8');
+  res.setHeader('content-disposition', 'inline');
+
       res.send(data);
     });
  });
@@ -141,7 +145,7 @@ fs.readFile( './sitemap.xml', function(err, data) {
  });
 
 
- app.listen(80, () => {
+ app.listen(3000, () => {
 
       console.log('--// PARK AVENJU start --//');
   })﻿;
