@@ -90,6 +90,7 @@ width: 60%
 }
 @media screen and (orientation:portrait) {
   #gallery {
+    margin-top: 20vw;
     width: 70vw;
   }
   .photo-grid img {
