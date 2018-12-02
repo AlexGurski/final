@@ -106,7 +106,7 @@ justify-content:space-between;
 .extraItems{
   position: relative;
   top: 2em;
-  width: 100%;
+  width: 96%;
  display: flex;
  height: 4em;
   flex-direction: row;
@@ -117,7 +117,7 @@ justify-content:space-between;
 
 }
 .AllItems{
-  width: 100%;
+  width: 98%;
 height: calc(100% - 6em);
   align-self: center;
 }
