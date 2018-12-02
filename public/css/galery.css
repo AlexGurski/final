@@ -91,22 +91,41 @@ width: 60%
 @media screen and (orientation:portrait) {
   #gallery {
     width: 70vw;
-
   }
-
   .photo-grid img {
       height: 20vw;
       width: 30vw;
   }
-
 .header{
   display: none;
 }
+.workSpace{
+  flex-direction: column-reverse;
+justify-content:space-between;
+}
 .extraItems{
-display: none;
+  position: relative;
+  top: 2em;
+  width: 100%;
+ display: flex;
+ height: 4em;
+  flex-direction: row;
+/  border:1px solid red;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  text-align: center;
+
 }
 .AllItems{
-  width: 95%;
+  width: 100%;
+height: calc(100% - 6em);
   align-self: center;
+}
+.folberName{
+    border: 1px dashed grey;
+  padding-left: 1em;
+    padding-right: 1em;
+    margin-right: 0.5em;
+        margin-LEFT: 0.5em;
 }
 }
