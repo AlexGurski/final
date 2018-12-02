@@ -126,10 +126,9 @@ app.get('/administrator', (req,res) =>{
 })
 
 fs.readFile( './sitemap.xml', function(err, data) {
-    app.get('/sitemap.xml', function(req, res) {
+app.get('/sitemap.xml', function(req, res) {
   res.setHeader('content-type', 'text/xml; charset=utf-8');
   res.setHeader('content-disposition', 'inline');
-
       res.send(data);
     });
  });
