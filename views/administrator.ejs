@@ -15,7 +15,7 @@
           <div class = 'forma'>
           <form action="/profile" method="post" enctype="multipart/form-data">
               <input type="file" name="photo" multiple="multiple"/><br>
-              <input type="text" name="text"  id='folberText' value="" readonly><br>
+              <input type="text" name="text"  id='folberText' value="" readonly><br><br>
               <input type='submit' value='ДОБАВИТЬ ФАЙЛ В ПАПКУ'>
           </form>
         </div>
@@ -26,7 +26,7 @@
             <div class = 'forma'>
             <h2>  Cоздать папку    </h2>
             <form action="/createDir" method="post" enctype="application/x-www-form-urlencoded">
-                <input type="text" name="text"  value="" ><br>
+                <input type="text" name="text"  value="" ><br><br>
                 <input type='submit' value='СОЗДАТЬ ПАПКУ С ДАННЫМ ИМЕНЕМ'>
             </form>
           </div>
@@ -38,7 +38,7 @@
             </div>
 
           <form action="/deleteDir" method="post" enctype="application/x-www-form-urlencoded">
-              <input type="text" name="text" id='deleteTextInput' value="" readonly><br>
+              <input type="text" name="text" id='deleteTextInput' value="" readonly><br><br>
               <input type='submit' value='УДАЛИТЬ ВЫБРАННУЮ ПАПКУ'>
           </form>
           </div>

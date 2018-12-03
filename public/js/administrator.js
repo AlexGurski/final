@@ -32,3 +32,13 @@
         };
       }
  })()
+   document.getElementsByClassName('galeryAdd')[0].style.display='none';
+   window.onload = function(){
+  let password = prompt('Enter password');
+  if ( password === '1488' ){
+  document.getElementsByClassName('galeryAdd')[0].style.display='flex';
+  } else {
+    alert('НЕ ВЕРНЫЙ ПАРОЛЬ!')
+    window.close();
+  }
+}
