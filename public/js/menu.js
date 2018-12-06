@@ -208,7 +208,7 @@ function createMenuPretty(items){
           const front = document.createElement("img");
           front.className = 'front';
           front.id = '123'+ items[i]._id;
-          front.style.background = 'white';
+
 
           front.onerror = function(){
           front.src = "./public/image/menuPhoto/UPDATE.png";
@@ -223,11 +223,11 @@ function createMenuPretty(items){
           back.className = 'back';
           back.id = i + items[i]._id + i;
           document.getElementById(conteiner.id).appendChild(back);
-
+/*
                      const pDisc = document.createElement("p");
                       pDisc.className = 'inner';
                       pDisc.innerHTML =  items[i].discription;
-                     document.getElementById(back.id).appendChild(pDisc);
+                     document.getElementById(back.id).appendChild(pDisc);*/
 
      ///////////////////////////
      const  pName = document.createElement("p");

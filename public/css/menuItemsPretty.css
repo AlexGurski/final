@@ -236,14 +236,7 @@ display: flex;
             backface-visibility: hidden;
 		border-radius: 25px 25px 0px 0px;
 }
-.container:hover .front,
-.container:hover .back{
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
+
 
 .back{
 
@@ -286,19 +279,6 @@ display: flex;
             transform-style: preserve-3d;
 }
 
-.container:hover .back{
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.container:hover .front{
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
 
 .front .inner p{
   font-size: 2rem;
