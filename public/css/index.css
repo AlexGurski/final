@@ -41,7 +41,7 @@ align-items: center;
 
   margin: 10px;
   width: 23vw;
-  height: 30vw;
+  height: auto;
   border-bottom: 1px dotted grey;
 
   flex-direction: column;
@@ -60,8 +60,8 @@ align-items: center;
   margin-top: 1em;
 }
 .extraPhoto{
-  width: 21vw;
-  height: 21vw;
+  width: 17vw;
+  height: 17vw;
 /  border:1px solid blue;
   transition: all 0.7s linear;
   background-image: url("../image/indexPhoto.jpg");
@@ -119,7 +119,7 @@ transform: scale(0.85, 0.85);
 }
 .extra{
   width: 89vw;
-  height: 95vw;
+height: auto;
 }
 .extraPhoto{
   width: 60vw;
